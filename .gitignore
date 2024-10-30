@@ -1,0 +1,9 @@
+__pycache__/
+/venv/
+/linux-venv
+/_test/
+
+/*.build/
+/*.dist/
+
+/*.bin
