@@ -422,9 +422,9 @@ async def main(args) -> int | None:
     )
 
     if not status:
-        for file in output_dir.iterdir():
-            file.unlink(True)
-        output_dir.rmdir()
+        # for file in output_dir.iterdir():
+        #     file.unlink(True)
+        # output_dir.rmdir()
 
         print("SUCCESS: merged parts successfully!")
         return
@@ -441,8 +441,7 @@ if __name__ == "__main__":
     from argparse import ArgumentParser
 
     parser = ArgumentParser(
-        prog="ffmpeg-audio-splitter",
-        description="split audio by silence",
+        description="ffmpeg-audio-splitter - split audio by silence",
         epilog="by lovemilk",
     )
 
@@ -480,7 +479,7 @@ if __name__ == "__main__":
         help="number of processes",
     )
     parser.add_argument(
-        "-m", "--merge-parts", action="store_true", help="merge parts into one file"
+        "-mp", "--merge-parts", action="store_true", help="merge parts into one file"
     )
     parser.add_argument(
         "-np",
