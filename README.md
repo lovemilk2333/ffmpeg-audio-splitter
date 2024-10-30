@@ -32,7 +32,7 @@ usage: ffmpeg-audio-splitter [-h] -o OUTPUT [-os OUTPUT_SUFFIX] -s SILENCE_DB -s
 
 split audio by silence
 
-positional arguments:  # 未知参数
+positional arguments:  # 位置参数
   input                 input file  # 输入的文件 (FFmpeg 支持的格式)
 
 options:  # 键值参数
