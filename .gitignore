@@ -3,9 +3,13 @@ __pycache__/
 /linux-venv
 /_test/
 
+# nuitka build cache
 /*.build/
 /*.dist/
+/*.onefile-build/
 
+# nuitka output files Linux
 /*.bin
 
-/main.exe
+# nuitka output files Windows
+/*.exe

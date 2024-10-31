@@ -28,7 +28,7 @@ pip install nuitka
 ## 使用
 ### 参数
 ```
-usage: ffmpeg-audio-splitter [-h] -o OUTPUT [-os OUTPUT_SUFFIX] -s SILENCE_DB -sd SILENCE_DURATION [-a AUDIO_INDEX] [-p PROCESSES] [-m] [-np] input
+usage: ffmpeg_audio_splitter [-h] -o OUTPUT [-os OUTPUT_SUFFIX] -s SILENCE_DB -sd SILENCE_DURATION [-a AUDIO_INDEX] [-p PROCESSES] [-m] [-np] input
 
 split audio by silence
 
@@ -59,10 +59,10 @@ by lovemilk
 ### Example
 将 `input.mkv` 音频文件中低于 -30dB 响度且持续时间超过 1s 的音频段丢弃, 并将分割后的音频段合并至 `output/merged.aac` (若音频以 aac 格式编码) 文件中.
 ```
-ffmpeg-audio-splitter input.mkv -o output/merged -s -30 -sd 1 -a 0 -mp
+ffmpeg_audio_splitter input.mkv -o output/merged -s -30 -sd 1 -a 0 -mp
 ```
 
 将 `input.mkv` 音频文件中低于 -30dB 响度且持续时间超过 1s 的音频段丢弃, 并将分割后的各音频保存至 `output/` 文件夹
 ```
-ffmpeg-audio-splitter input.mkv -o output/ -s -30 -sd 1 -a 0
+ffmpeg_audio_splitter input.mkv -o output/ -s -30 -sd 1 -a 0
 ```

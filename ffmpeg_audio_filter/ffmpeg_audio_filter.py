@@ -172,7 +172,7 @@ async def _split_silence(
         .absolute()
         .resolve()
     )
-    command = f'ffmpeg -i "{silences["file"]}" -map a:{audio_index } -ss {start} -to {end} -c copy "{full_filename}" -y'
+    command = f'ffmpeg -ss {start} -accurate_seek -i "{silences["file"]}" -map a:{audio_index } -to {end} -c copy "{full_filename}" -y'
     process = await asyncio.create_subprocess_shell(
         command, stderr=None if print_progress else subprocess.DEVNULL
     )
@@ -422,9 +422,9 @@ async def main(args) -> int | None:
     )
 
     if not status:
-        # for file in output_dir.iterdir():
-        #     file.unlink(True)
-        # output_dir.rmdir()
+        for file in output_dir.iterdir():
+            file.unlink(True)
+        output_dir.rmdir()
 
         print("SUCCESS: merged parts successfully!")
         return
